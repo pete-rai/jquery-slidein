@@ -1,0 +1,76 @@
+/*
+ * jQuery Slidein Plugin - https://github.com/pete-rai/jquery-slidein
+ *
+ * This CSS file is for the SAMPLE PAGE ONLY, you DON'T need it to use
+ * the widget, but it does demonstrate how to customise the widget
+ * appearance and operations.
+ *
+ */
+
+/* the panel and grab handle */
+
+.slidein
+{
+    background : LightSkyBlue;
+}
+
+/* the panel only */
+
+.slidein-panel
+{
+    overflow : hidden;
+    padding  : 20px;
+    /* don't add width or height, use 'breadth' widget option as it works for horz and vert */
+}
+
+/* the handle only */
+
+.slidein-handle
+{
+    color : navy;
+}
+
+/* the sample page */
+
+html
+{
+    font-family : Calibri, Candara, Segoe, Optima, Arial, sans-serif;
+    overflow    : hidden;  /* important when right or bottom docked */
+    text-align  : center;
+}
+
+/* the main page body */
+
+div.main
+{
+    position : absolute;
+    width    : 80%;
+    height   : 100%;
+    top      : 0;
+    bottom   : 0;
+    left     : 0;
+    right    : 0;
+    margin   : auto;
+}
+
+/* the button sets */
+
+div.buttons
+{
+    margin : 10px;
+}
+
+/* no radio button icon */
+
+div.buttons .ui-icon
+{
+    display: none;
+}
+
+/* the page footer */
+
+div.footer
+{
+    font-size   : 12pt;
+    padding-top : 30px;
+}

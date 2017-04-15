@@ -1,0 +1,40 @@
+/*
+ * jQuery Slidein Plugin v1.0.0
+ * https://github.com/pete-rai/jquery-slidein
+ *
+ * Copyright 2017 Pete Rai
+ * Released under the MIT license
+ * https://github.com/pete-rai/jquery-slidein/blob/master/LICENSE
+ *
+ * Website  : http://www.rai.org.uk
+ * GitHub   : https://github.com/pete-rai
+ * LinkedIn : https://uk.linkedin.com/in/raipete
+ *
+ */
+
+/* useful for right (x) or bottom (y) docked panels
+
+ html {
+     overflow-x: hidden;
+     overflow-y: hidden;
+ }
+*/
+
+.slidein {
+    display: block;      /* don't change this */
+    position: absolute;  /* don't change this */
+    z-index: 999;
+    background: lightgrey;
+}
+
+.slidein-panel {
+    /* don't add width or height, use 'breadth' widget option as it then works for horz and vert */
+}
+
+.slidein-handle {
+    overflow: hidden;  /* don't change this */
+    padding: 10px;
+    white-space: nowrap;
+    user-select: none;
+    cursor: pointer;
+}

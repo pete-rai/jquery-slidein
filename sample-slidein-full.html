@@ -1,0 +1,226 @@
+<!--
+ * jQuery Slidein Plugin - https://github.com/pete-rai/jquery-slidein
+ *
+ * This HTML file is a SAMPLE PAGE ONLY, you DON'T need it to use the
+ * widget, but it does demonstrate how to customise the widget appearance
+ * and operations.
+ *
+-->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>jquery.slidein &raquo; widget sample</title>
+
+    <link rel="stylesheet" type="text/css" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" type="text/css" href="jquery.slidein.css">
+    <link rel="stylesheet" type="text/css" href="sample-slidein.css">
+
+    <script type="text/javascript" src="//code.jquery.com/jquery-2.2.4.min.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="jquery.slidein.js"></script>
+    <script type="text/javascript">
+
+        // example dynamic handle text including line breaks
+
+        function instruct ()
+        {
+            var isopen = $("#mypanel").slidein ("open");
+            return ($("#mypanel").slidein (isopen ? "toClose" : "toOpen")) + "<br/>" + (isopen ? "close" : "open");
+        }
+
+        function tell ()
+        {
+            if ($("#mypanel").slidein ("prompt"))
+            {
+                $("#mypanel").slidein ("prompt", instruct());
+            }
+        }
+
+        // on document ready is important so the host elements are loaded
+        $(document).ready (function ()
+        {
+            // example setting intial options
+            $("#mypanel").slidein ({ peek: 12, speed: 500, opacity: 0.7 });
+
+            // example wiring in the callback for open / close notifications
+            $("#mypanel").slidein ("option", "slide", function (e, data)  // e.g. data.open, data.dock
+            {
+                tell ();
+
+                $("#slide-open"  ).prop ('checked', false).button ('refresh');
+                $("#slide-close" ).prop ('checked', false).button ('refresh');
+                $("#slide-toggle").prop ('checked', false).button ('refresh');
+
+                $(data.open ? "#slide-open" : "#slide-close").prop ('checked', true).button ('refresh');
+
+                var label = "label[for = slide-" + (data.open ? "open" : "close") + " ]";
+
+                $(label).css ("color", "black");
+                setTimeout( function () { $(label).css ("color", ""); }, 300 );
+            });
+
+            // wire in the sample control buttons for this demo app
+            $("#dock"    ).controlgroup();
+            $("#slide"   ).controlgroup();
+            $("#open"    ).controlgroup();
+            $("#close"   ).controlgroup();
+            $("#opacity" ).controlgroup();
+            $("#prompt"  ).controlgroup();
+            $("#curve"   ).controlgroup();
+            $("#position").controlgroup();
+            $("#breadth" ).controlgroup();
+            $("#hide"    ).controlgroup();
+            $("#disabled").controlgroup();
+            $("#speed"   ).controlgroup();
+            $("#peek"    ).controlgroup();
+        });
+
+        // sample control button handlers - example of setting options
+        function slide    (open)     { $("#mypanel").slidein ("open"    , open    ); }
+        function curve    (curve)    { $("#mypanel").slidein ("curve"   , curve   ); }
+        function toggle   (open)     { $("#mypanel").slidein ("toggle"            ); }
+        function position (position) { $("#mypanel").slidein ("position", position); }
+        function opacity  (opacity)  { $("#mypanel").slidein ("opacity" , opacity ); }
+        function breadth  (breadth)  { $("#mypanel").slidein ("breadth" , breadth ); }
+        function hide     (hide)     { $("#mypanel").slidein ("hidden"  , hide    ); }
+        function disable  (disabled) { $("#mypanel").slidein ("disabled", disabled); }
+        function speed    (speed)    { $("#mypanel").slidein ("speed"   , speed   ); }
+        function peek     (peek)     { $("#mypanel").slidein ("peek"    , peek    ); }
+        function toopen   (click)    { $("#mypanel").slidein ("toOpen"  , click ? 'click' : 'hover'); tell(); }
+        function toclose  (click)    { $("#mypanel").slidein ("toClose" , click ? 'click' : 'hover'); tell(); }
+        function prompt   (prompt)   { $("#mypanel").slidein ("prompt"  , prompt ? instruct() : ""); }
+
+        // dock handler changes some button text
+        function dock (dock)
+        {
+            $("#mypanel").slidein ("dock", dock);
+
+            if (dock == "left" || dock == "right")
+            {
+                 $("label[for = pos-top ]").text("top"   );
+                 $("label[for = pos-high]").text("high"  );
+                 $("label[for = pos-low ]").text("low"   );
+                 $("label[for = pos-bot ]").text("bottom");
+            }
+            else
+            {
+                $("label[for = pos-top ]").text("leftmost" );
+                $("label[for = pos-high]").text("left"     );
+                $("label[for = pos-low ]").text("right"    );
+                $("label[for = pos-bot ]").text("rightmost");
+            }
+        }
+
+    </script>
+  </head>
+  <body>
+    <div class="main">
+      <h1>jquery.slidein</h1>
+      <h3>Full Widget Sample</h3>
+      <h4>
+        <i>To learn more about using this cool widget, visit the <a href="https://github.com/pete-rai/jquery-slidein">GitHub page</a> or simply examine the source of this sample</i>
+      </h4>
+      <div class="buttons" id="dock">
+        <input onclick="dock ('top')" type="radio" id="dock-top" name="dock">
+        <label for="dock-top">top</label>
+        <input onclick="dock ('left')" type="radio" id="dock-left" name="dock" checked="checked">
+        <label for="dock-left">left</label>
+        <input onclick="dock ('bottom')" type="radio" id="dock-bottom" name="dock">
+        <label for="dock-bottom">bottom</label>
+        <input onclick="dock ('right')" type="radio" id="dock-right" name="dock">
+        <label for="dock-right">right</label>
+      </div>
+      <div class="buttons" id="slide">
+        <input onclick="slide (true)" type="radio" id="slide-open" name="slide" checked="checked">
+        <label for="slide-open">open</label>
+        <input onclick="toggle ()" type="radio" id="slide-toggle" name="slide">
+        <label for="slide-toggle">toggle</label>
+        <input onclick="slide (false)" type="radio" id="slide-close" name="slide">
+        <label for="slide-close">close</label>
+      </div>
+      <div class="buttons" id="open">
+        <input onclick="toopen (true)" type="radio" id="open-click" name="open" checked="checked">
+        <label for="open-click">open on click</label>
+        <input onclick="toopen (false)" type="radio" id="open-hover" name="open">
+        <label for="open-hover">open on hover</label>
+      </div>
+      <div class="buttons" id="close">
+        <input onclick="toclose (true)" type="radio" id="close-click" name="close" checked="checked">
+        <label for="close-click">close on click</label>
+        <input onclick="toclose (false)" type="radio" id="close-hover" name="close">
+        <label for="close-hover">close on hover</label>
+      </div>
+      <div class="buttons" id="opacity">
+        <input onclick="opacity (0.7)" type="radio" id="opacity-high" name="opacity" checked="checked">
+        <label for="opacity-high">opaque</label>
+        <input onclick="opacity (0.5)" type="radio" id="opacity-middle" name="opacity">
+        <label for="opacity-middle">middle</label>
+        <input onclick="opacity (0.2)" type="radio" id="opacity-low" name="opacity">
+        <label for="opacity-low">transparent</label>
+      </div>
+      <div class="buttons" id="prompt">
+        <input onclick="prompt (false)" type="radio" id="prompt-none" name="prompt" checked="checked">
+        <label for="prompt-none">no prompt</label>
+        <input onclick="prompt (true)" type="radio" id="prompt-with" name="prompt">
+        <label for="prompt-with">with prompt</label>
+      </div>
+      <div class="buttons" id="curve">
+        <input onclick="curve (10)" type="radio" id="curve-curved" name="curve" checked="checked">
+        <label for="curve-curved">curved</label>
+        <input onclick="curve (0)" type="radio" id="curve-none" name="curve">
+        <label for="curve-none">square</label>
+      </div>
+      <div class="buttons" id="breadth">
+        <input onclick="breadth (100)" type="radio" id="breadth-thin" name="breadth">
+        <label for="breadth-thin">thin</label>
+        <input onclick="breadth (250)" type="radio" id="breadth-mid" name="breadth" checked="checked">
+        <label for="breadth-mid">mid</label>
+        <input onclick="breadth (500)" type="radio" id="breadth-wide" name="breadth">
+        <label for="breadth-wide">wide</label>
+      </div>
+      <div class="buttons" id="position">
+        <input onclick="position (0)" type="radio" id="pos-top" name="pos">
+        <label for="pos-top">top</label>
+        <input onclick="position (10)" type="radio" id="pos-high" name="pos" checked="checked">
+        <label for="pos-high">high</label>
+        <input onclick="position (50)" type="radio" id="pos-mid" name="pos">
+        <label for="pos-mid">middle</label>
+        <input onclick="position (90)" type="radio" id="pos-low" name="pos">
+        <label for="pos-low">low</label>
+        <input onclick="position (100)" type="radio" id="pos-bot" name="pos">
+        <label for="pos-bot">bottom</label>
+      </div>
+      <div class="buttons" id="hide">
+        <input onclick="hide (false)" type="radio" id="hide-show" name="hide" checked="checked">
+        <label for="hide-show">show</label>
+        <input onclick="hide (true)" type="radio" id="hide-hide" name="hide">
+        <label for="hide-hide">hide</label>
+      </div>
+      <div class="buttons" id="disabled">
+        <input onclick="disable (false)" type="radio" id="disabled-enable" name="disabled" checked="checked">
+        <label for="disabled-enable">enabled</label>
+        <input onclick="disable (true)" type="radio" id="disabled-disabled" name="disabled">
+        <label for="disabled-disabled">disabled</label>
+      </div>
+      <div class="buttons" id="speed">
+        <input onclick="speed (1000)" type="radio" id="speed-slow" name="speed">
+        <label for="speed-slow">slow</label>
+        <input onclick="speed (400)" type="radio" id="speed-norm" name="speed" checked="checked">
+        <label for="speed-norm">medium speed</label>
+        <input onclick="speed (50)" type="radio" id="speed-fast" name="speed">
+        <label for="speed-fast">fast</label>
+      </div>
+      <div class="buttons" id="peek">
+        <input onclick="peek (0)" type="radio" id="peek-none" name="peek">
+        <label for="peek-none">none</label>
+        <input onclick="peek (12)" type="radio" id="peek-norm" name="peek" checked="checked">
+        <label for="peek-norm">medium peek</label>
+        <input onclick="peek (32)" type="radio" id="peek-big" name="peek">
+        <label for="peek-big">large</label>
+      </div>
+      <div class="footer">&copy; 2017 <a href="http://www.rai.org.uk">Pete Rai</a></div>
+    </div>
+    <div id="mypanel">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+  </body>
+</html>
