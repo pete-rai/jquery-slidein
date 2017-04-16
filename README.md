@@ -26,8 +26,8 @@ This plug relies on [jQuery](https://jquery.com/) (version 2.2.4+) and [jQueryUI
 Here are a couple of examples that you can use to understand how the plugin works
 and what you can do with it:
 
-* Click [here](https://pete-rai.github.io/jquery-placeholder/sample-slidein-basic.html) to see a basic example.
-* Click [here](https://pete-rai.github.io/jquery-placeholder/sample-slidein-full.html) to see a fuller example, which shows all the options that you can manipulate.
+* Click [here](https://pete-rai.github.io/jquery-slidein/sample-slidein-basic.html) to see a basic example.
+* Click [here](https://pete-rai.github.io/jquery-slidein/sample-slidein-full.html) to see a fuller example, which shows all the options that you can manipulate.
 
 ## Example Usage
 
