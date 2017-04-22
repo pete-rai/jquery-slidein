@@ -7,9 +7,21 @@ your main page and can be slid in on a mouse click or mouse hover. There are lot
 of other options for customisation such as grab handle, slide speed, opacity,
 peeking-in etc. The plugin is excellent for housing user options which are only for occasional use, especially overlaid onto whole screen UIs that demand the entire screen real estate.
 
+### Demos and Example Usage
+
+Here are a couple of examples that you can use to understand how the plugin works
+and what you can do with it:
+
+* Click [here](https://pete-rai.github.io/jquery-slidein/sample-slidein-basic.html) to see a basic example.
+* Click [here](https://pete-rai.github.io/jquery-slidein/sample-slidein-full.html) to see a fuller example, which shows all the options that you can manipulate.
+
 ### License
 
 This plugin is available under [the MIT license](https://github.com/pete-rai/jquery-slidein/blob/master/LICENSE). _Please respect the terms of the license._
+
+### Karmaware
+
+This software is released with the [karmaware](https://pete-rai.github.io/karmaware) tag
 
 ### Disclaimer
 
@@ -20,14 +32,6 @@ in the changes; that way everyone can benefit from it.
 ### Dependencies
 
 This plug relies on [jQuery](https://jquery.com/) (version 2.2.4+) and [jQueryUI](https://jqueryui.com/) (version 1.12.1+)
-
-### Demos and Example Usage
-
-Here are a couple of examples that you can use to understand how the plugin works
-and what you can do with it:
-
-* Click [here](https://pete-rai.github.io/jquery-slidein/sample-slidein-basic.html) to see a basic example.
-* Click [here](https://pete-rai.github.io/jquery-slidein/sample-slidein-full.html) to see a fuller example, which shows all the options that you can manipulate.
 
 ## Example Usage
 
