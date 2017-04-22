@@ -6,6 +6,9 @@
  * Released under the MIT license
  * https://github.com/pete-rai/jquery-slidein/blob/master/LICENSE
  *
+ * Released with the karmaware tag
+ * https://pete-rai.github.io/karmaware
+ *
  * Website  : http://www.rai.org.uk
  * GitHub   : https://github.com/pete-rai
  * LinkedIn : https://uk.linkedin.com/in/raipete
@@ -73,7 +76,7 @@ $.widget( ".slidein", {
             clearTimeout( self._mouse_in );
         }).mouseenter( function() {
             if ( self.options.toOpen == "hover" && !this._sliding) {
-        //   ** have to hover over grab handle only to open - else it can go slide-in-out mental **        
+        //   ** have to hover over grab handle only to open - else it can go slide-in-out mental **
         //        self._mouse_in = setTimeout( function () { self.open ( true ) }, this._mouse_delay );
             }
             clearTimeout( self._mouse_out );
