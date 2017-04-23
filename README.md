@@ -139,4 +139,4 @@ Note some important points about styling:
 * Don't add _width_ or _height_ to the panel, use the 'breadth' widget option instead - as this works for horizontal and vertical docking
 * For _right_ or _bottom_ docked panels, you may need to disable the relevant scroll bar using “overflow-x: hidden" or "overflow-y: hidden" on the _html_ selector.
 
-_– [Pete Rai](http://www.rai.org.uk/)_
+_– [Pete Rai](https://pete-rai.github.io/)_
