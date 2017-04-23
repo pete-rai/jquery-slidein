@@ -1,5 +1,8 @@
 # jquery-slidein
 
+> Visit my [GitHub Pages site](https://pete-rai.github.io/) to get in touch or to
+see of demos and this and much more.
+
 ## Overview
 
 A slide-in panel for jQueryUI that works from all four sides. The panel overlays
