@@ -1,7 +1,7 @@
 # jquery-slidein
 
 > Visit my [GitHub Pages site](https://pete-rai.github.io/) to get in touch or to
-see demos and this and much more.
+see demos of this and much more.
 
 ## Overview
 
