@@ -1,7 +1,7 @@
 # jquery-slidein
 
 > Visit my [GitHub Pages site](https://pete-rai.github.io/) to get in touch or to
-see of demos and this and much more.
+see demos and this and much more.
 
 ## Overview
 
@@ -29,7 +29,7 @@ This software is released with the [karmaware](https://pete-rai.github.io/karmaw
 ### Disclaimer
 
 I've done best efforts testing on a range of modern browsers. If you find any problems,
-do let me know by raising an issue [here](https://github.com/pete-rai/pete-rai.github.io/issues). Better still, create a fix for the problem too and drop
+do let me know by raising an issue [here](https://github.com/pete-rai/jquery-slidein/issues). Better still, create a fix for the problem too and drop
 in the changes; that way everyone can benefit from it.
 
 ### Dependencies
