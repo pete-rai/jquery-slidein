@@ -265,12 +265,15 @@ $.widget( ".slidein", {
                 this._sliding     = true;
 
                 var amount = this._is_horizontal() ? this.element.outerWidth() : this.element.outerHeight();
-                var move = ( open ? "+=" : "-=" ) + ( amount - this.options.peek );
-                var self = this;
+                var move   = ( open ? "+=" : "-=" ) + ( amount - this.options.peek );
+                var self   = this;
+                var prop   = {};
 
-                $( this._grab_handle ).animate( { [this.options.dock]: move }, this.options.speed , "linear" );
+                prop [this.options.dock] = move;
 
-                $( this.element ).animate( { [this.options.dock]: move }, this.options.speed, "linear", function() {
+                $( this._grab_handle ).animate( prop, this.options.speed , "linear" );
+
+                $( this.element ).animate( prop, this.options.speed, "linear", function() {
                     self._sliding = false;
                     self._trigger( "slide", null, { open: self.options.open, dock: self.options.dock } );  // trigger to any "we slid" handlers
                 });
