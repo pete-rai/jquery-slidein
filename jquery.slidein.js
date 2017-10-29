@@ -1,5 +1,5 @@
 /*
- * jQuery Slidein Plugin v1.0.0
+ * jQuery Slidein Plugin v1.0.1
  * https://github.com/pete-rai/jquery-slidein
  *
  * Copyright 2017 Pete Rai
